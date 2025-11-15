@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Esquina Geek</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo">
+                <img src="img/logo.png" alt="La Esquina Geek Logo" class="logo-icon">
+                <h2>La Esquina Geek</h2>
+            </div>
+            <div class="header-actions">
+                <a href="carrito.html" class="btn-cart">
+                    🛒 <span>Carrito</span>
+                </a>
+                <div class="auth-group">
+                    <a href="logeo.html" class="btn-login">
+                        Iniciar Sesión
+                    </a>
+                    <a href="registro.html" class="link-register">
+                        Registrarse
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <nav class="categories">
+                <a href="productos.html?cat=cartas">🎴 Cartas</a>
+                <a href="productos.html?cat=figuras">🧑 Figuras</a>
+                <a href="productos.html?cat=comics">📖 Cómics</a>
+                <a href="productos.html?cat=juegos">🎮 Videojuegos</a>
+                <a href="productos.html?cat=accesorios">⭐ Accesorios</a>
+            </nav>
+            <nav class="nav-links">
+                <a href="Home.html">Inicio</a>
+                <a href="integrantes.html">Equipo</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- 1. LO MÁS IMPORTANTE: Hero con CTA -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>La Esquina Geek</h1>
+                <p>Coleccionables raros y exclusivos</p>
+                <a href="productos.html" class="btn-primary">Ver Productos</a>
+            </div>
+        </section>
+
+        <!-- 2. PRODUCTOS DESTACADOS -->
+        <section class="products">
+            <h2>Destacados</h2>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG6B-_6QlvJoePD9SD0ik7dANf0mK_bXvrm6TkUPY9AnOOhlCg-7fe3G-cIk6FP5Z-tLURp0LyMQQCRBXWPmech_6DMS6pyVahxiKpg-2x04_ClNr7FuJ1yIXXU6RWnCBkL0UKB_8hnV5aWmm8HAADi6p50S9ICO9r1-h01k0E6OY1dIT1JJRT1-MAyLZRbvCu3kX2vqBpezbEIyll4BUrl0SJ2LG_DqOk4pT37UIvPlQ-PzinTWLB_Y6RXchsnKdW1xgV8gUOECj1"
+                        alt="Charizard VMAX">
+                    <h3>Charizard VMAX</h3>
+                    <p class="price">$120.00</p>
+                    <button class="btn-primary">Ver</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuj1RYI2KjXcbjlCcQYUZr7Qsj8bOEzpWzjAbvXrwtTHP5N6cn_E4DOpMJ-X8pTnDfvs07qGGrVUBkMf8GJjrsTL109Tg9eyA-cnZve701uG_s0lhZ1Hkq_30Z60xzXUDh3zr9j1pPoO59yDvZKsDgGoDBDOocSq5jp1Xf_OfCSA9KCfQnJ2lhTUFZdRy8j0jTswGAzftcL6AFEZLTPY-ssNgntghoXOcqtSAAiO7Vk_zV-_gVU5ysQ6UkTs6rLtxBLisflYfePwvK"
+                        alt="Gundam">
+                    <h3>Astray Red</h3>
+                    <p class="price">$75.50</p>
+                    <button class="btn-primary">Ver</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpTdvbWzr1GrrPRkHdspNPXxDhXUPIE79kFMuqmRf86my4nCIueH17hKcnt6qf8ygO2tCkUbQ0usszYO8I72bNoofUabtVFlgVtOkrWX1yYGn6-kiv-o9PUyPdhanVLfCiItLB3QYEOtpNyaWiHj6ATrrpfL_xjQsUs-_5rmp9TTqY2ylakOFe0nOz75ip2vE9ZCHguk7IQ4U9TzGJXQnLxTvaWjvv72bMOHX5KTdAC0nE_CVMz0aUHFQ6BPw5mswxG-92vIDjZBS"
+                        alt="Black Lotus">
+                    <h3>Black Lotus Alpha</h3>
+                    <p class="price">$511,100</p>
+                    <button class="btn-primary">Ver</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA419Jnld2YoDB04XpiajbL-r9ebUj4Auo9Kaa4hNnA4_zLctQdYvas8HZAQ2RkxpgU6IIP25IXYnRJMNgh5hsVUr7Fr4b7TPt3IXzuIjfwkaxwiDm7oGG_qUY8AcP8T7RgSPgTug5vADICFjElO1sZ-ciI9Ubg35LlqPFkbCU4_qdy1I8WpYbYzfNMcbV3ipn75-8Tnik9hjuJBh58_hpH6R4kpYNsa6Fnr_q3_cHMTgYrdhxxvRAzmOWUmC6pQNbHAvop4pJpFlxQ"
+                        alt="Blue-Eyes">
+                    <h3>White Dragon</h3>
+                    <p class="price">$85,100</p>
+                    <button class="btn-primary">Ver</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CARACTERÍSTICAS (menos importante) -->
+        <section class="features">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="icon">⚡</span>
+                    <h3>Envío Rápido</h3>
+                    <p>Entrega en 24-48h</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🔒</span>
+                    <h3>Pago Seguro</h3>
+                    <p>Compra 100% protegida</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">✨</span>
+                    <h3>Productos Verificados</h3>
+                    <p>Autenticidad garantizada</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>La Esquina Geek</h3>
+                <p>Tu destino para coleccionables exclusivos</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <a href="productos.html">Productos</a>
+                <a href="integrantes.html">Equipo</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <p>🌟 Únete a nuestra comunidad</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 La Esquina Geek. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
