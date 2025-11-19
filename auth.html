@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Registro - La Esquina Geek</title>
+    <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <!-- Botón de retorno al inicio -->
+    <a href="Home.html" class="btn-back" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+        <span>Volver al inicio</span>
+    </a>
+
+    <div class="auth-container" id="auth-container">
+        <!-- Panel de Login -->
+        <div class="form-container login-container">
+            <form class="auth-form" id="login-form">
+                <h1>Iniciar Sesión</h1>
+                <div class="social-container">
+                    <a href="#" class="social-btn" aria-label="Google">G</a>
+                    <a href="#" class="social-btn" aria-label="Facebook">F</a>
+                    <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+                </div>
+                <span class="form-subtitle">o usa tu cuenta</span>
+
+                <!-- CAMPOS ACTUALIZADOS -->
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                <button type="submit" class="btn-submit">Iniciar Sesión</button>
+            </form>
+        </div>
+
+        <!-- Panel de Registro -->
+        <div class="form-container register-container">
+            <form class="auth-form" id="register-form">
+                <h1>Crear Cuenta</h1>
+                <div class="social-container">
+                    <a href="#" class="social-btn" aria-label="Google">G</a>
+                    <a href="#" class="social-btn" aria-label="Facebook">F</a>
+                    <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+                </div>
+                <span class="form-subtitle">o usa tu email</span>
+
+                <!-- CAMPOS ACTUALIZADOS -->
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn-submit">Registrarse</button>
+            </form>
+        </div>
+
+        <!-- Panel de Overlay (Naranja deslizante) -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <!-- Overlay izquierdo (cuando está en login) -->
+                <div class="overlay-panel overlay-left">
+                    <h1>¡Bienvenido de Vuelta!</h1>
+                    <p>Para mantenerte conectado con nosotros, inicia sesión con tu información personal</p>
+                    <button class="btn-ghost" id="login-btn">Iniciar Sesión</button>
+                </div>
+
+                <!-- Overlay derecho (cuando está en register) -->
+                <div class="overlay-panel overlay-right">
+                    <h1>¡Hola, Geek!</h1>
+                    <p>Regístrate y únete a nuestra comunidad de coleccionistas y entusiastas</p>
+                    <button class="btn-ghost" id="register-btn">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+
+</html>

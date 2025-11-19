@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Productos - La Esquina Geek. Explora nuestra colección de cartas coleccionables, figuras y más.">
+    <title>Productos</title>
+    <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="productos.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <form class="search-bar" role="search" id="search-form">
+                    <input type="search" id="search-input" placeholder="Buscar productos..."
+                        aria-label="Buscar productos">
+                    <button type="submit" aria-label="Buscar">
+                        <img src="img/iconos/buscar.png" alt="">
+                    </button>
+                </form>
+            </div>
+
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo de La Esquina Geek" class="logo-icon" width="40" height="40">
+                <h1>La Esquina Geek</h1>
+            </div>
+
+            <div class="header-actions">
+                <a href="ayuda.html" class="btn-icon-text" aria-label="Ayuda" data-tooltip="Centro de Ayuda">
+                    <span class="text">AYUDA</span>
+                    <img src="img/iconos/ayuda.png" alt="Ayuda">
+                </a>
+
+                <a href="favoritos.html" class="btn-icon" aria-label="Favoritos" data-tooltip="Mis Favoritos">
+                    <img src="img/iconos/favoritos.png" alt="Favoritos">
+                </a>
+
+                <a href="auth.html" class="btn-icon" id="btn-account" aria-label="Acceder a mi cuenta"
+                    data-tooltip="Mi Cuenta">
+                    <img src="img/iconos/usuario.png" alt="Mi Cuenta">
+                </a>
+
+                <a href="carrito.html" class="btn-icon" aria-label="Ver carrito de compras"
+                    data-tooltip="Carrito de Compras">
+                    <img src="img/iconos/carrito.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="sidebar-menu" id="sidebar-menu" aria-label="Menú de navegación principal">
+            <div class="sidebar-header">
+                <h2>Menú</h2>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">✕</button>
+            </div>
+
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <h3>Navegación</h3>
+                    <a href="Home.html">Inicio</a>
+                    <a href="productos.html" aria-current="page">Productos</a>
+                    <a href="integrantes.html">Equipo</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Categorías</h3>
+                    <a href="productos.html?cat=pokemon" data-category="pokemon">Pokémon TCG</a>
+                    <a href="productos.html?cat=yugioh" data-category="yugioh">Yu-Gi-Oh!</a>
+                    <a href="productos.html?cat=magic" data-category="magic">Magic The Gathering</a>
+                    <a href="productos.html?cat=anime" data-category="anime">Figuras de Anime</a>
+                    <a href="productos.html?cat=funko" data-category="funko">Funko Pop</a>
+                    <a href="productos.html?cat=premium" data-category="premium">Estatuas Premium</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="products-main">
+        <div class="products-container">
+            <div class="products-layout">
+                <!-- Sidebar de Filtros -->
+                <aside class="filters-sidebar">
+                    <div class="filters-header">
+                        <h2>Filtros</h2>
+                        <button class="btn-clear-filters" id="clear-filters">Limpiar</button>
+                    </div>
+
+                    <!-- Filtro de Categorías -->
+                    <div class="filter-section">
+                        <h3>Categorías</h3>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="cartas" checked>
+                                <span>Cartas Coleccionables</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="figuras">
+                                <span>Figuras de Acción</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="comics">
+                                <span>Cómics</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="funko">
+                                <span>Funko Pop</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filtro de Precio -->
+                    <div class="filter-section">
+                        <h3>Rango de Precio</h3>
+                        <div class="price-range">
+                            <input type="range" id="price-min" min="0" max="500" value="0" step="10">
+                            <input type="range" id="price-max" min="0" max="500" value="500" step="10">
+                            <div class="price-values">
+                                <span>$<span id="price-min-value">0</span></span>
+                                <span>$<span id="price-max-value">500</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filtro de Orden -->
+                    <div class="filter-section">
+                        <h3>Ordenar por</h3>
+                        <div class="filter-options">
+                            <label class="filter-radio">
+                                <input type="radio" name="sort" value="relevance" checked>
+                                <span>Relevancia</span>
+                            </label>
+                            <label class="filter-radio">
+                                <input type="radio" name="sort" value="price-asc">
+                                <span>Precio: Menor a Mayor</span>
+                            </label>
+                            <label class="filter-radio">
+                                <input type="radio" name="sort" value="price-desc">
+                                <span>Precio: Mayor a Menor</span>
+                            </label>
+                            <label class="filter-radio">
+                                <input type="radio" name="sort" value="name">
+                                <span>Nombre A-Z</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Grid de Productos -->
+                <div class="products-content">
+                    <div class="products-header">
+                        <h1>Productos – La Esquina Geek</h1>
+                        <p class="products-count"><span id="product-count">10</span> productos encontrados</p>
+                    </div>
+
+                    <!-- Grid -->
+                    <div class="products-grid" id="products-grid">
+                        <!-- Los productos se cargarán dinámicamente -->
+                    </div>
+
+                    <!-- Mensaje de sin resultados -->
+                    <div class="no-results" id="no-results" style="display: none;">
+                        <div class="no-results-icon">😞</div>
+                        <h2>No se encontraron productos</h2>
+                        <p>Intenta ajustar tus filtros o busca algo diferente.</p>
+                        <button class="btn-primary" id="reset-filters">Reiniciar Filtros</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Columna Izquierda: Logo y Contacto -->
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="La Esquina Geek" class="footer-logo-img">
+                </div>
+                <div class="footer-info">
+                    <p class="footer-phone">📞 641-754-0072</p>
+                    <p class="footer-email">✉️ soporte@laesquinageek.com</p>
+                    <p class="footer-location">📍 PANAMÁ, Vía España, Torre 100</p>
+                </div>
+            </div>
+
+            <!-- Columna Centro: Enlaces -->
+            <div class="footer-center">
+                <h3>ENLACES</h3>
+                <nav class="footer-links">
+                    <a href="Home.html">Inicio</a>
+                    <a href="productos.html">Productos</a>
+                    <a href="integrantes.html">Equipo</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+
+            <!-- Columna Derecha: Redes y Newsletter -->
+            <div class="footer-right">
+                <div class="footer-social-wrapper">
+                    <h3>REDES SOCIALES</h3>
+                    <nav class="footer-social">
+                        <a href="https://facebook.com/laesquinageek" target="_blank" aria-label="Facebook">
+                            <img src="img/iconos/RS/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://twitter.com/laesquinageek" target="_blank" aria-label="Twitter">
+                            <img src="img/iconos/RS/X.png" alt="Twitter">
+                        </a>
+                        <a href="https://instagram.com/laesquinageek" target="_blank" aria-label="Instagram">
+                            <img src="img/iconos/RS/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://tiktok.com/@laesquinageek" target="_blank" aria-label="TikTok">
+                            <img src="img/iconos/RS/tiktok.png" alt="TikTok">
+                        </a>
+                    </nav>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>NEWSLETTER</h3>
+                    <form class="newsletter-form">
+                        <input type="text" placeholder="Nombre" aria-label="Nombre">
+                        <input type="email" placeholder="Tu Email" aria-label="Email">
+                        <button type="submit" class="btn-newsletter">SUSCRIBIRSE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>© Todos los derechos reservados 2025</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="productos.js"></script>
+</body>
+
+</html>

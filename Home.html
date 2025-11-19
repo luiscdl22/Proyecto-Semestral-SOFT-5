@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Esquina Geek - Tienda online de coleccionables exclusivos y raros.">
     <title>La Esquina Geek</title>
+    <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,277 +16,308 @@
 </head>
 
 <body>
-    <!-- Encabezado -->
+    <!-- Encabezado principal -->
     <header class="header">
         <div class="header-container">
+            <!-- Menú hamburguesa y búsqueda -->
+            <div class="header-left">
+                <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <form class="search-bar" role="search">
+                    <input type="search" placeholder="Buscar..." aria-label="Buscar">
+                    <button type="submit" aria-label="Buscar">
+                        <img src="img/iconos/buscar.png" alt="">
+                    </button>
+                </form>
+            </div>
+
+            <!-- Logo y marca centrados -->
             <div class="logo">
-                <img src="img/logo.png" alt="La Esquina Geek Logo" class="logo-icon">
-                <h2>La Esquina Geek</h2>
+                <img src="img/logo.png" alt="Logo de La Esquina Geek" class="logo-icon" width="40" height="40">
+                <h1>La esquina Geek</h1>
             </div>
 
             <div class="header-actions">
-                <a href="carrito.html" class="btn-cart">
-                    🛒
+                <a href="ayuda.html" class="btn-icon-text" aria-label="Ayuda">
+                    <span class="text">AYUDA</span>
+                    <img src="img/iconos/ayuda.png" alt="Ayuda">
                 </a>
-                <button class="btn-login" id="btn-account">
-                    👤 Mi Cuenta
-                </button>
+                <a href="favoritos.html" class="btn-icon" aria-label="Favoritos">
+                    <img src="img/iconos/favoritos.png" alt="Favoritos">
+                </a>
+                <a href="auth.html" class="btn-icon" aria-label="Cuenta">
+                    <img src="img/iconos/usuario.png" alt="Cuenta">
+                </a>
+                <a href="carrito.html" class="btn-icon" aria-label="Carrito">
+                    <img src="img/iconos/carrito.png" alt="Carrito">
+                </a>
             </div>
         </div>
 
-        <nav class="nav-links">
-            <a href="Home.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="integrantes.html">Equipo</a>
-            <a href="contacto.html">Contacto</a>
+        <!-- Menú lateral desplegable -->
+        <nav class="sidebar-menu" id="sidebar-menu" aria-label="Menú de navegación principal">
+            <div class="sidebar-header">
+                <h2>Menú</h2>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">✕</button>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Enlaces principales -->
+                <div class="sidebar-section">
+                    <h3>Navegación</h3>
+                    <a href="Home.html" aria-current="page">Inicio</a>
+                    <a href="productos.html">Productos</a>
+                    <a href="integrantes.html">Equipo</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+
+                <!-- Categorías -->
+                <div class="sidebar-section">
+                    <h3>Categorías</h3>
+                    <a href="productos.html?cat=pokemon">Pokémon TCG</a>
+                    <a href="productos.html?cat=yugioh">Yu-Gi-Oh!</a>
+                    <a href="productos.html?cat=magic">Magic The Gathering</a>
+                    <a href="productos.html?cat=anime">Figuras de Anime</a>
+                    <a href="productos.html?cat=funko">Funko Pop</a>
+                    <a href="productos.html?cat=premium">Estatuas Premium</a>
+                </div>
+            </div>
         </nav>
+
+        <!-- Overlay para el menú -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
     </header>
 
-    <!-- Contenido Principal -->
+    <!-- Main Content -->
     <main>
-        <!-- 1. LO MÁS IMPORTANTE: Hero con Carrusel -->
+        <!-- Carrusel Hero -->
         <section class="hero-carousel">
             <div class="carousel-container">
-                <div class="carousel-slide active"
-                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk-8Nb5q92Enc9Cga_y2PbBBW9LOC2nRdRZZuuVIzMNp-eO4x18CmVTJqF7k3xRBSGioZwEdd856y2TlOVIlQR-mFnntHdtwwuNBsxVi30S2m1pESAEZrr2XZleX7jMQjOSyjQXcKVKhE1I7f6WntlKyoqjrBM5BUQZooPOF7Amu4dvPL9UZmmUuzRKl23KcGY3d4kjuxGCRENhva-XrpMBN1cahmmWkpT2kSmqMtB1uf1fRfVlydYE3Q_mf0hBfbTXgNcxUUun8CF');">
+                <!-- Slide 1 -->
+                <article class="carousel-slide active">
+                    <img src="img/Slide/Slide1.png" alt="Slide 1" class="carousel-bg">
                     <div class="hero-content">
-                        <h1>La Esquina Geek</h1>
+                        <h2>La Esquina Geek</h2>
                         <p>Coleccionables raros y exclusivos</p>
                         <a href="productos.html" class="btn-primary">Ver Productos</a>
                     </div>
-                </div>
-                <div class="carousel-slide"
-                    style="background-image: url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=1200');">
+                </article>
+
+                <!-- Slide 2 -->
+                <article class="carousel-slide">
+                    <img src="img/Slide/Slide2.png" alt="Slide 2" class="carousel-bg">
                     <div class="hero-content">
-                        <h1>Figuras de Colección</h1>
+                        <h2>Figuras de Colección</h2>
                         <p>Las mejores figuras de anime y videojuegos</p>
                         <a href="productos.html?cat=figuras" class="btn-primary">Ver Figuras</a>
                     </div>
-                </div>
-                <div class="carousel-slide"
-                    style="background-image: url('https://images.unsplash.com/photo-1511882150382-421056c89033?w=1200');">
+                </article>
+
+                <!-- Slide 3 -->
+                <article class="carousel-slide">
+                    <img src="img/Slide/Slide3.png" alt="Slide 3" class="carousel-bg">
                     <div class="hero-content">
-                        <h1>Cartas Legendarias</h1>
+                        <h2>Cartas Legendarias</h2>
                         <p>Trading cards de Pokémon, Yu-Gi-Oh! y Magic</p>
                         <a href="productos.html?cat=cartas" class="btn-primary">Ver Cartas</a>
                     </div>
-                </div>
-                <div class="carousel-slide"
-                    style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200');">
+                </article>
+
+                <!-- Slide 4 -->
+                <article class="carousel-slide">
+                    <img src="img/Slide/Slide4.png" alt="Slide 4" class="carousel-bg">
                     <div class="hero-content">
-                        <h1>Videojuegos Retro</h1>
-                        <p>Ediciones especiales y clásicos difíciles de encontrar</p>
+                        <h2>Videojuegos Retro</h2>
+                        <p>Ediciones especiales y clásicos</p>
                         <a href="productos.html?cat=juegos" class="btn-primary">Ver Juegos</a>
                     </div>
-                </div>
+                </article>
             </div>
 
             <!-- Indicadores -->
             <div class="carousel-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
-                <span class="indicator" data-slide="3"></span>
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
+                <button class="indicator" data-slide="3"></button>
             </div>
 
-            <!-- Flechas de navegación -->
+            <!-- Controles -->
             <button class="carousel-btn prev">❮</button>
             <button class="carousel-btn next">❯</button>
         </section>
 
-        <!-- 2. PRODUCTO DESTACADO -->
-        <section class="featured-section">
-            <div class="featured-container">
-                <!-- Producto destacado grande -->
-                <div class="featured-main">
-                    <div class="featured-badge">Destacado</div>
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG6B-_6QlvJoePD9SD0ik7dANf0mK_bXvrm6TkUPY9AnOOhlCg-7fe3G-cIk6FP5Z-tLURp0LyMQQCRBXWPmech_6DMS6pyVahxiKpg-2x04_ClNr7FuJ1yIXXU6RWnCBkL0UKB_8hnV5aWmm8HAADi6p50S9ICO9r1-h01k0E6OY1dIT1JJRT1-MAyLZRbvCu3kX2vqBpezbEIyll4BUrl0SJ2LG_DqOk4pT37UIvPlQ-PzinTWLB_Y6RXchsnKdW1xgV8gUOECj1"
-                        alt="Charizard VMAX">
-                    <div class="featured-info">
-                        <h3>Charizard VMAX Edición Especial</h3>
-                        <p class="featured-price">$<span>120</span>.99</p>
-                        <button class="btn-add-cart">Ver Contenido</button>
-                    </div>
-                </div>
+        <!-- Anuncios y Novedades -->
+        <section class="announcements-section">
+            <h2>Novedades y Anuncios</h2>
+            <div class="announcements-grid">
+                <article class="announcement-card">
+                    <span class="badge">🔥 Nuevo</span>
+                    <h3>Nuevas Adquisiciones de Pokémon TCG</h3>
+                    <p>Acabamos de recibir cartas exclusivas de la colección Crown Zenith incluyendo Charizard VMAX y
+                        Mewtwo Shiny. Stock limitado.</p>
+                    <a href="productos.html?cat=pokemon" class="btn-link">Ver colección →</a>
+                </article>
 
-                <!-- Mini productos al lado -->
-                <div class="featured-mini-products">
-                    <div class="mini-product">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuj1RYI2KjXcbjlCcQYUZr7Qsj8bOEzpWzjAbvXrwtTHP5N6cn_E4DOpMJ-X8pTnDfvs07qGGrVUBkMf8GJjrsTL109Tg9eyA-cnZve701uG_s0lhZ1Hkq_30Z60xzXUDh3zr9j1pPoO59yDvZKsDgGoDBDOocSq5jp1Xf_OfCSA9KCfQnJ2lhTUFZdRy8j0jTswGAzftcL6AFEZLTPY-ssNgntghoXOcqtSAAiO7Vk_zV-_gVU5ysQ6UkTs6rLtxBLisflYfePwvK"
-                            alt="Gundam">
-                        <div class="mini-product-info">
-                            <h4>Astray Red Frame</h4>
-                            <p class="mini-price">$<span>75</span>.50</p>
-                        </div>
-                    </div>
-                    <div class="mini-product">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxpTdvbWzr1GrrPRkHdspNPXxDhXUPIE79kFMuqmRf86my4nCIueH17hKcnt6qf8ygO2tCkUbQ0usszYO8I72bNoofUabtVFlgVtOkrWX1yYGn6-kiv-o9PUyPdhanVLfCiItLB3QYEOtpNyaWiHj6ATrrpfL_xjQsUs-_5rmp9TTqY2ylakOFe0nOz75ip2vE9ZCHguk7IQ4U9TzGJXQnLxTvaWjvv72bMOHX5KTdAC0nE_CVMz0aUHFQ6BPw5mswxG-92vIDjZBS"
-                            alt="Black Lotus">
-                        <div class="mini-product-info">
-                            <h4>Black Lotus Alpha</h4>
-                            <p class="mini-price">$<span>511,100</span></p>
-                        </div>
-                    </div>
-                    <div class="mini-product">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA419Jnld2YoDB04XpiajbL-r9ebUj4Auo9Kaa4hNnA4_zLctQdYvas8HZAQ2RkxpgU6IIP25IXYnRJMNgh5hsVUr7Fr4b7TPt3IXzuIjfwkaxwiDm7oGG_qUY8AcP8T7RgSPgTug5vADICFjElO1sZ-ciI9Ubg35LlqPFkbCU4_qdy1I8WpYbYzfNMcbV3ipn75-8Tnik9hjuJBh58_hpH6R4kpYNsa6Fnr_q3_cHMTgYrdhxxvRAzmOWUmC6pQNbHAvop4pJpFlxQ"
-                            alt="Blue-Eyes">
-                        <div class="mini-product-info">
-                            <h4>Blue-Eyes White Dragon</h4>
-                            <p class="mini-price">$<span>85</span>.99</p>
-                        </div>
-                    </div>
-                </div>
+                <article class="announcement-card">
+                    <span class="badge">⚡ Promo</span>
+                    <h3>Descuento en Figuras Hot Toys</h3>
+                    <p>15% de descuento en toda nuestra línea de figuras Hot Toys Marvel. Oferta válida hasta fin de
+                        mes.</p>
+                    <a href="productos.html?cat=figuras" class="btn-link">Ver ofertas →</a>
+                </article>
+
+                <article class="announcement-card">
+                    <span class="badge">📦 Stock</span>
+                    <h3>Restock de Funko Pop Exclusivos</h3>
+                    <p>Ya están disponibles los Funko Pop exclusivos de DC Comics que estaban agotados. Ediciones
+                        limitadas.</p>
+                    <a href="productos.html?cat=funko" class="btn-link">Ver disponibles →</a>
+                </article>
             </div>
         </section>
 
-        <!-- 3. CATEGORÍAS -->
-        <section class="categories-section">
-            <h2>Categorías</h2>
-            <div class="categories-grid">
-                <a href="productos.html?cat=cartas" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?w=400" alt="Cartas">
-                    <h3>Cartas</h3>
-                </a>
-                <a href="productos.html?cat=figuras" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1601814933824-fd0b574dd592?w=400" alt="Figuras">
-                    <h3>Coleccionables y Funkos</h3>
-                </a>
-                <a href="productos.html?cat=gaming" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?w=400" alt="Gaming">
-                    <h3>Gaming</h3>
-                </a>
-                <a href="productos.html?cat=audio" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Audio">
-                    <h3>Audio</h3>
-                </a>
-                <a href="productos.html?cat=pc" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=400" alt="PC">
-                    <h3>Componentes de PC</h3>
-                </a>
-                <a href="productos.html?cat=tech" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=400" alt="Tech">
-                    <h3>Tecnología</h3>
-                </a>
+        <!-- Productos Destacados -->
+        <section class="featured-products">
+            <h2>Productos Destacados del Mes</h2>
+            <div class="products-grid">
+                <article class="product-card">
+                    <span class="product-badge">Destacado</span>
+                    <div class="product-image">
+                        <img src="img/productos/charizard.png" alt="Charizard VMAX">
+                    </div>
+                    <div class="product-info">
+                        <h3>Charizard VMAX</h3>
+                        <p class="product-price">$120.99</p>
+                        <a href="productos.html" class="btn-add">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="img/productos/gundam-astray.jpg" alt="Gundam Astray">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gundam Astray Red Frame</h3>
+                        <p class="product-price">$75.50</p>
+                        <a href="productos.html" class="btn-add">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="img/productos/blue-eyes.jpg" alt="Blue-Eyes White Dragon">
+                    </div>
+                    <div class="product-info">
+                        <h3>Blue-Eyes White Dragon</h3>
+                        <p class="product-price">$85.99</p>
+                        <a href="productos.html" class="btn-add">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="img/productos/iron-man-hot-toys.jpg" alt="Iron Man Hot Toys">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hot Toys Iron Man Mark 85</h3>
+                        <p class="product-price">$425.00</p>
+                        <a href="productos.html" class="btn-add">Ver detalles</a>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- 4. PRODUCTOS RECIENTES -->
-        <section class="recientes-section">
-            <h2>Recientes</h2>
-            <div class="recientes-grid">
-                <div class="product-card-small">
-                    <img src="https://images.unsplash.com/photo-1585670149405-e3d9a9f615f2?w=400" alt="Producto">
-                    <h4>PlayStation 5 Slim</h4>
-                    <p class="price-small">$485</p>
-                </div>
-                <div class="product-card-small">
-                    <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=400" alt="Producto">
-                    <h4>PC Gaming Completa</h4>
-                    <p class="price-small">$1,200</p>
-                </div>
-                <div class="product-card-small">
-                    <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=400" alt="Producto">
-                    <h4>Funko Pop Batman</h4>
-                    <p class="price-small">$25</p>
-                </div>
-                <div class="product-card-small">
-                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400" alt="Producto">
-                    <h4>Audífonos Gamer RGB</h4>
-                    <p class="price-small">$89</p>
-                </div>
-                <div class="product-card-small">
-                    <img src="https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=400" alt="Producto">
-                    <h4>Tarjeta Gráfica RTX</h4>
-                    <p class="price-small">$599</p>
-                </div>
-                <div class="product-card-small">
-                    <img src="https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400" alt="Producto">
-                    <h4>Teclado Mecánico RGB</h4>
-                    <p class="price-small">$149</p>
-                </div>
+        <!-- Información de la tienda -->
+        <section class="info-section">
+            <div class="info-grid">
+                <section class="info-card">
+                    <div class="info-icon">🚚</div>
+                    <h3>Envío Seguro</h3>
+                    <p>Embalaje especial para coleccionables</p>
+                </section>
+                <section class="info-card">
+                    <div class="info-icon">✓</div>
+                    <h3>Productos Verificados</h3>
+                    <p>Autenticidad garantizada en cada artículo</p>
+                </section>
+                <section class="info-card">
+                    <div class="info-icon">💳</div>
+                    <h3>Pago Seguro</h3>
+                    <p>Múltiples métodos de pago disponibles</p>
+                </section>
+                <section class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Atención al cliente siempre disponible</p>
+                </section>
             </div>
         </section>
     </main>
 
-    <!-- Modal de Cuenta -->
-    <div class="account-modal" id="account-modal">
-        <div class="modal-overlay" id="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close">✕</button>
-
-            <div class="modal-header">
-                <h2>Bienvenido a La Esquina Geek</h2>
-            </div>
-
-            <div class="modal-body">
-                <!-- Botón principal: Crear Cuenta -->
-                <a href="registro.html" class="btn-modal-primary">
-                    Crear Cuenta
-                </a>
-
-                <!-- Texto y enlace para iniciar sesión -->
-                <p class="modal-login-text">
-                    ¿Tienes cuenta? <a href="logeo.html" class="link-modal-login">Iniciar Sesión</a>
-                </p>
-
-                <!-- Botón secundario: Ser Tienda Oficial -->
-                <a href="tienda-oficial.html" class="btn-modal-secondary">
-                    Ser Tienda Oficial ⚡
-                </a>
-
-                <!-- Enlaces adicionales -->
-                <div class="modal-links">
-                    <a href="vendedor.html" class="modal-link-item">
-                        <span class="icon">🛡️</span>
-                        <span>Vender con Geeky</span>
-                    </a>
-                    <a href="faq.html" class="modal-link-item">
-                        <span class="icon">❓</span>
-                        <span>Preguntas Frecuentes</span>
-                    </a>
-                    <a href="ayuda.html" class="modal-link-item">
-                        <span class="icon">📖</span>
-                        <span>Ayuda</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pie de Página -->
+    <!-- Pie de página -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h4>Únete</h4>
-                <a href="registro.html">Registrarme</a>
-                <a href="logeo.html">Inicia Sesión</a>
-                <a href="vendedor.html">Vender</a>
-                <a href="tienda-oficial.html">Ser Tienda Oficial</a>
-                <a href="ayuda.html">Ayuda</a>
+            <!-- Columna Izquierda: Logo y Contacto -->
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="La Esquina Geek" class="footer-logo-img">
+                </div>
+                <div class="footer-info">
+                    <p class="footer-phone">641-754-0072</p>
+                    <p class="footer-email">soporte@laesquinageek.com</p>
+                    <p class="footer-location">PANAMÁ, Vía España, Torre 100</p>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Sobre La Esquina Geek</h4>
-                <a href="terminos.html">Términos y Condiciones</a>
-                <a href="privacidad.html">Políticas de Privacidad</a>
+
+            <!-- Columna Centro: Enlaces -->
+            <div class="footer-center">
+                <h3>ENLACES</h3>
+                <nav class="footer-links">
+                    <a href="Home.html">Inicio</a>
+                    <a href="productos.html">Productos</a>
+                    <a href="integrantes.html">Equipo</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
             </div>
-            <div class="footer-section">
-                <h4>Contáctanos</h4>
-                <p class="footer-contact">Para soporte: <a
-                        href="mailto:soporte@laesquinageek.com">soporte@laesquinageek.com</a></p>
-                <p class="footer-contact">Para mercadeo: <a
-                        href="mailto:marketing@laesquinageek.com">marketing@laesquinageek.com</a></p>
-                <p class="footer-address">PANAMÁ, Vía España, Torre 100</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Twitter">𝕏</a>
-                    <a href="#" aria-label="TikTok">🎵</a>
-                    <a href="#" aria-label="YouTube">▶️</a>
-                    <a href="#" aria-label="Facebook">👍</a>
+
+            <!-- Columna Derecha: Redes y Newsletter -->
+            <div class="footer-right">
+                <div class="footer-social-wrapper">
+                    <h3>REDES SOCIALES</h3>
+                    <nav class="footer-social">
+                        <a href="https://facebook.com/laesquinageek" target="_blank" aria-label="Facebook">
+                            <img src="img/iconos/RS/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://twitter.com/laesquinageek" target="_blank" aria-label="Twitter">
+                            <img src="img/iconos/RS/X.png" alt="Twitter">
+                        </a>
+                        <a href="https://instagram.com/laesquinageek" target="_blank" aria-label="Instagram">
+                            <img src="img/iconos/RS/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://tiktok.com/@laesquinageek" target="_blank" aria-label="TikTok">
+                            <img src="img/iconos/RS/tiktok.png" alt="TikTok">
+                        </a>
+                    </nav>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>NEWSLETTER</h3>
+                    <form class="newsletter-form">
+                        <input type="text" placeholder="Nombre" aria-label="Nombre">
+                        <input type="email" placeholder="Tu Email" aria-label="Email">
+                        <button type="submit" class="btn-newsletter">SUSCRIBIRSE</button>
+                    </form>
                 </div>
             </div>
         </div>
+
+        <!-- Copyright -->
         <div class="footer-bottom">
-            <p>© 2025 La Esquina Geek. Todos los derechos reservados.</p>
+            <p>© Todos los derechos reservados 2025</p>
         </div>
     </footer>
 
