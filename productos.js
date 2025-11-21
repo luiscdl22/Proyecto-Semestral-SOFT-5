@@ -1,12 +1,12 @@
 /**
- * Script de Productos
- * Maneja filtros, búsqueda y renderizado de productos
+ * productos.js
+ * Maneja los productos y filtros de la tienda
  */
 
 (function () {
   "use strict";
 
-  // Datos de ejemplo 
+  // Lista de productos (normalmente vendría de una base de datos)
   const PRODUCTS = [
     {
       id: 1,
@@ -80,7 +80,7 @@
     },
   ];
 
-  // Estado de filtros
+  // Variables para los filtros actuales
   let currentFilters = {
     categories: ["cartas"],
     priceMin: 0,
@@ -89,7 +89,7 @@
     search: "",
   };
 
-  // Elementos del DOM
+  // Elementos del HTML que vamos a usar
   const productsGrid = document.getElementById("products-grid");
   const noResults = document.getElementById("no-results");
   const productCount = document.getElementById("product-count");
@@ -102,9 +102,7 @@
   const clearFiltersBtn = document.getElementById("clear-filters");
   const resetFiltersBtn = document.getElementById("reset-filters");
 
-  /**
-   * Renderiza un producto individual
-   */
+  // Crea el HTML para mostrar un producto
   function renderProduct(product) {
     return `
       <article class="product-card" data-product-id="${product.id}">
@@ -121,9 +119,7 @@
     `;
   }
 
-  /**
-   * Obtiene el label de categoría
-   */
+  // Convierte el nombre de la categoría a algo más bonito
   function getCategoryLabel(category) {
     const labels = {
       cartas: "Cartas Coleccionables",
@@ -134,31 +130,24 @@
     return labels[category] || category;
   }
 
-  /**
-   * Filtra productos según los criterios actuales
-   */
+  // Filtra los productos según lo que el usuario seleccionó
   function filterProducts() {
     return PRODUCTS.filter((product) => {
-      // Filtro de categoría
+      // Verifica si la categoría está seleccionada
       if (!currentFilters.categories.includes(product.category)) {
         return false;
       }
 
-      // Filtro de precio
-      if (
-        product.price < currentFilters.priceMin ||
-        product.price > currentFilters.priceMax
-      ) {
+      // Verifica si el precio está en el rango
+      if (product.price < currentFilters.priceMin || product.price > currentFilters.priceMax) {
         return false;
       }
 
-      // Filtro de búsqueda
+      // Verifica si coincide con la búsqueda
       if (currentFilters.search) {
         const searchTerm = currentFilters.search.toLowerCase();
         const nameMatch = product.name.toLowerCase().includes(searchTerm);
-        const categoryMatch = product.category
-          .toLowerCase()
-          .includes(searchTerm);
+        const categoryMatch = product.category.toLowerCase().includes(searchTerm);
         if (!nameMatch && !categoryMatch) {
           return false;
         }
@@ -168,9 +157,7 @@
     });
   }
 
-  /**
-   * Ordena productos según el criterio seleccionado
-   */
+  // Ordena los productos según el criterio seleccionado
   function sortProducts(products) {
     const sorted = [...products];
 
@@ -187,20 +174,20 @@
     }
   }
 
-  /**
-   * Renderiza todos los productos
-   */
+  // Muestra los productos en la página
   function renderProducts() {
     let filtered = filterProducts();
     let sorted = sortProducts(filtered);
 
     if (!productsGrid) return;
 
+    // Si no hay productos, muestra el mensaje de "sin resultados"
     if (sorted.length === 0) {
       productsGrid.style.display = "none";
       if (noResults) noResults.style.display = "flex";
       if (productCount) productCount.textContent = "0";
     } else {
+      // Si hay productos, muéstralos
       productsGrid.style.display = "grid";
       if (noResults) noResults.style.display = "none";
       if (productCount) productCount.textContent = sorted.length;
@@ -208,25 +195,19 @@
     }
   }
 
-  /**
-   * Actualiza los filtros de categoría
-   */
+  // Actualiza cuando cambias las categorías
   function updateCategoryFilters() {
-    const checkboxes = document.querySelectorAll(
-      'input[name="category"]:checked'
-    );
+    const checkboxes = document.querySelectorAll('input[name="category"]:checked');
     currentFilters.categories = Array.from(checkboxes).map((cb) => cb.value);
     renderProducts();
   }
 
-  /**
-   * Actualiza el filtro de precio
-   */
+  // Actualiza cuando cambias el precio
   function updatePriceFilter() {
     const min = parseInt(priceMinInput.value);
     const max = parseInt(priceMaxInput.value);
 
-    // Asegurar que min <= max
+    // Asegura que min no sea mayor que max
     if (min > max) {
       priceMinInput.value = max;
       currentFilters.priceMin = max;
@@ -241,16 +222,14 @@
       currentFilters.priceMax = max;
     }
 
-    // Actualizar valores mostrados
+    // Actualiza los números que se muestran
     if (priceMinValue) priceMinValue.textContent = currentFilters.priceMin;
     if (priceMaxValue) priceMaxValue.textContent = currentFilters.priceMax;
 
     renderProducts();
   }
 
-  /**
-   * Actualiza el filtro de orden
-   */
+  // Actualiza cuando cambias el orden
   function updateSortFilter() {
     const selected = document.querySelector('input[name="sort"]:checked');
     if (selected) {
@@ -259,37 +238,31 @@
     }
   }
 
-  /**
-   * Maneja la búsqueda
-   */
+  // Busca productos cuando escribes algo
   function handleSearch(e) {
     e.preventDefault();
     currentFilters.search = searchInput.value.trim();
     renderProducts();
   }
 
-  /**
-   * Limpia todos los filtros (desmarca todo)
-   */
+  // Limpia todos los filtros
   function clearFilters() {
-    // Desmarcar TODAS las categorías
+    // Desmarca todas las categorías
     document.querySelectorAll('input[name="category"]').forEach((cb) => {
       cb.checked = false;
     });
 
-    // Resetear precio al rango máximo
+    // Resetea el precio
     priceMinInput.value = 0;
     priceMaxInput.value = 500;
 
-    // Resetear orden
-    document.querySelector(
-      'input[name="sort"][value="relevance"]'
-    ).checked = true;
+    // Resetea el orden
+    document.querySelector('input[name="sort"][value="relevance"]').checked = true;
 
-    // Resetear búsqueda
+    // Limpia la búsqueda
     if (searchInput) searchInput.value = "";
 
-    // Resetear estado SIN categorías (todo limpio)
+    // Resetea todo
     currentFilters = {
       categories: [],
       priceMin: 0,
@@ -302,9 +275,7 @@
     renderProducts();
   }
 
-  /**
-   * Maneja clic en "Agregar al Carrito"
-   */
+  // Agrega un producto al carrito
   function handleAddToCart(e) {
     if (e.target.classList.contains("btn-add-to-cart")) {
       const productId = parseInt(e.target.dataset.productId);
@@ -312,14 +283,12 @@
 
       if (product) {
         alert(`"${product.name}" agregado al carrito!`);
-        // TODO: Implementar guardado en localStorage para el carrito
+        // TODO: Aquí se podría guardar en localStorage
       }
     }
   }
 
-  /**
-   * Inicializa event listeners
-   */
+  // Conecta todos los eventos
   function initEventListeners() {
     // Categorías
     document.querySelectorAll('input[name="category"]').forEach((cb) => {
@@ -327,10 +296,8 @@
     });
 
     // Precio
-    if (priceMinInput)
-      priceMinInput.addEventListener("input", updatePriceFilter);
-    if (priceMaxInput)
-      priceMaxInput.addEventListener("input", updatePriceFilter);
+    if (priceMinInput) priceMinInput.addEventListener("input", updatePriceFilter);
+    if (priceMaxInput) priceMaxInput.addEventListener("input", updatePriceFilter);
 
     // Orden
     document.querySelectorAll('input[name="sort"]').forEach((radio) => {
@@ -341,25 +308,21 @@
     if (searchForm) searchForm.addEventListener("submit", handleSearch);
 
     // Botones de limpiar
-    if (clearFiltersBtn)
-      clearFiltersBtn.addEventListener("click", clearFilters);
-    if (resetFiltersBtn)
-      resetFiltersBtn.addEventListener("click", clearFilters);
+    if (clearFiltersBtn) clearFiltersBtn.addEventListener("click", clearFilters);
+    if (resetFiltersBtn) resetFiltersBtn.addEventListener("click", clearFilters);
 
     // Agregar al carrito
     if (productsGrid) productsGrid.addEventListener("click", handleAddToCart);
   }
 
-  /**
-   * Inicializa la página
-   */
+  // Inicia todo cuando carga la página
   function init() {
     initEventListeners();
     updatePriceFilter();
     renderProducts();
   }
 
-  // Iniciar cuando el DOM esté listo
+  // Espera a que cargue el HTML
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {

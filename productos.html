@@ -1,70 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Productos - La Esquina Geek. Explora nuestra colección de cartas coleccionables, figuras y más.">
-    <title>Productos</title>
+    <meta name="description" content="Productos - La Esquina Geek. Explora nuestra colección de cartas coleccionables, figuras y más.">
+    
+    <!-- Título que aparece en la pestaña -->
+    <title>Productos - La Esquina Geek</title>
+    
+    <!-- Icono de la pestaña -->
     <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32" type="image/png">
+    
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Archivos de estilos CSS -->
+    <link rel="stylesheet" href="Home.css">
     <link rel="stylesheet" href="productos.css">
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- ============================================ -->
+    <!-- HEADER (igual que Home.html) -->
+    <!-- ============================================ -->
     <header class="header">
         <div class="header-container">
+            <!-- PARTE IZQUIERDA: Menú hamburguesa + Búsqueda -->
             <div class="header-left">
+                <!-- Botón menú hamburguesa -->
                 <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menú de navegación">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
+                <!-- Barra de búsqueda (busca productos en esta página) -->
                 <form class="search-bar" role="search" id="search-form">
-                    <input type="search" id="search-input" placeholder="Buscar productos..."
-                        aria-label="Buscar productos">
+                    <input type="search" id="search-input" placeholder="Buscar productos..." aria-label="Buscar productos">
                     <button type="submit" aria-label="Buscar">
                         <img src="img/iconos/buscar.png" alt="">
                     </button>
                 </form>
             </div>
 
+            <!-- PARTE CENTRAL: Logo -->
             <div class="logo">
-                <img src="img/logo.png" alt="Logo de La Esquina Geek" class="logo-icon" width="40" height="40">
+                <img src="img/logo.png" alt="Logo de La Esquina Geek" class="logo-icon">
                 <h1>La Esquina Geek</h1>
             </div>
 
+            <!-- PARTE DERECHA: Botones de acción -->
             <div class="header-actions">
-                <a href="ayuda.html" class="btn-icon-text" aria-label="Ayuda" data-tooltip="Centro de Ayuda">
+                <a href="ayuda.html" class="btn-icon-text" aria-label="Ayuda">
                     <span class="text">AYUDA</span>
                     <img src="img/iconos/ayuda.png" alt="Ayuda">
                 </a>
-
-                <a href="favoritos.html" class="btn-icon" aria-label="Favoritos" data-tooltip="Mis Favoritos">
+                <a href="favoritos.html" class="btn-icon" aria-label="Favoritos">
                     <img src="img/iconos/favoritos.png" alt="Favoritos">
                 </a>
-
-                <a href="auth.html" class="btn-icon" id="btn-account" aria-label="Acceder a mi cuenta"
-                    data-tooltip="Mi Cuenta">
-                    <img src="img/iconos/usuario.png" alt="Mi Cuenta">
+                <a href="auth.html" class="btn-icon" aria-label="Cuenta">
+                    <img src="img/iconos/usuario.png" alt="Cuenta">
                 </a>
-
-                <a href="carrito.html" class="btn-icon" aria-label="Ver carrito de compras"
-                    data-tooltip="Carrito de Compras">
+                <a href="carrito.html" class="btn-icon" aria-label="Carrito">
                     <img src="img/iconos/carrito.png" alt="Carrito">
                 </a>
             </div>
         </div>
 
-        <!-- Sidebar Menu -->
+        <!-- ============================================ -->
+        <!-- MENÚ LATERAL -->
+        <!-- ============================================ -->
         <nav class="sidebar-menu" id="sidebar-menu" aria-label="Menú de navegación principal">
             <div class="sidebar-header">
                 <h2>Menú</h2>
@@ -72,6 +80,7 @@
             </div>
 
             <div class="sidebar-content">
+                <!-- Enlaces principales -->
                 <div class="sidebar-section">
                     <h3>Navegación</h3>
                     <a href="Home.html">Inicio</a>
@@ -80,36 +89,45 @@
                     <a href="contacto.html">Contacto</a>
                 </div>
 
+                <!-- Categorías de productos -->
                 <div class="sidebar-section">
                     <h3>Categorías</h3>
-                    <a href="productos.html?cat=pokemon" data-category="pokemon">Pokémon TCG</a>
-                    <a href="productos.html?cat=yugioh" data-category="yugioh">Yu-Gi-Oh!</a>
-                    <a href="productos.html?cat=magic" data-category="magic">Magic The Gathering</a>
-                    <a href="productos.html?cat=anime" data-category="anime">Figuras de Anime</a>
-                    <a href="productos.html?cat=funko" data-category="funko">Funko Pop</a>
-                    <a href="productos.html?cat=premium" data-category="premium">Estatuas Premium</a>
+                    <a href="productos.html?cat=pokemon">Pokémon TCG</a>
+                    <a href="productos.html?cat=yugioh">Yu-Gi-Oh!</a>
+                    <a href="productos.html?cat=magic">Magic The Gathering</a>
+                    <a href="productos.html?cat=anime">Figuras de Anime</a>
+                    <a href="productos.html?cat=funko">Funko Pop</a>
+                    <a href="productos.html?cat=premium">Estatuas Premium</a>
                 </div>
             </div>
         </nav>
 
+        <!-- Fondo oscuro cuando el menú está abierto -->
         <div class="sidebar-overlay" id="sidebar-overlay"></div>
     </header>
 
-    <!-- Main Content -->
+    <!-- ============================================ -->
+    <!-- CONTENIDO PRINCIPAL DE PRODUCTOS -->
+    <!-- ============================================ -->
     <main class="products-main">
         <div class="products-container">
             <div class="products-layout">
-                <!-- Sidebar de Filtros -->
+                
+                <!-- ============================================ -->
+                <!-- BARRA LATERAL DE FILTROS -->
+                <!-- ============================================ -->
                 <aside class="filters-sidebar">
+                    <!-- Cabecera de filtros con botón limpiar -->
                     <div class="filters-header">
                         <h2>Filtros</h2>
                         <button class="btn-clear-filters" id="clear-filters">Limpiar</button>
                     </div>
 
-                    <!-- Filtro de Categorías -->
+                    <!-- FILTRO 1: Categorías -->
                     <div class="filter-section">
                         <h3>Categorías</h3>
                         <div class="filter-options">
+                            <!-- Cada checkbox permite filtrar por tipo de producto -->
                             <label class="filter-checkbox">
                                 <input type="checkbox" name="category" value="cartas" checked>
                                 <span>Cartas Coleccionables</span>
@@ -129,12 +147,15 @@
                         </div>
                     </div>
 
-                    <!-- Filtro de Precio -->
+                    <!-- FILTRO 2: Rango de precio -->
                     <div class="filter-section">
                         <h3>Rango de Precio</h3>
                         <div class="price-range">
+                            <!-- Slider para precio mínimo -->
                             <input type="range" id="price-min" min="0" max="500" value="0" step="10">
+                            <!-- Slider para precio máximo -->
                             <input type="range" id="price-max" min="0" max="500" value="500" step="10">
+                            <!-- Muestra los valores seleccionados -->
                             <div class="price-values">
                                 <span>$<span id="price-min-value">0</span></span>
                                 <span>$<span id="price-max-value">500</span></span>
@@ -142,10 +163,11 @@
                         </div>
                     </div>
 
-                    <!-- Filtro de Orden -->
+                    <!-- FILTRO 3: Orden de productos -->
                     <div class="filter-section">
                         <h3>Ordenar por</h3>
                         <div class="filter-options">
+                            <!-- Radio buttons para elegir cómo ordenar -->
                             <label class="filter-radio">
                                 <input type="radio" name="sort" value="relevance" checked>
                                 <span>Relevancia</span>
@@ -166,19 +188,24 @@
                     </div>
                 </aside>
 
-                <!-- Grid de Productos -->
+                <!-- ============================================ -->
+                <!-- ÁREA DE PRODUCTOS -->
+                <!-- ============================================ -->
                 <div class="products-content">
+                    <!-- Cabecera: Título y contador -->
                     <div class="products-header">
-                        <h1>Productos – La Esquina Geek</h1>
+                        <h1>Productos — La Esquina Geek</h1>
+                        <!-- Muestra cuántos productos hay -->
                         <p class="products-count"><span id="product-count">10</span> productos encontrados</p>
                     </div>
 
-                    <!-- Grid -->
+                    <!-- Grid donde aparecerán las tarjetas de productos -->
+                    <!-- Este div se llena con JavaScript -->
                     <div class="products-grid" id="products-grid">
-                        <!-- Los productos se cargarán dinámicamente -->
+                        <!-- Los productos se cargan dinámicamente con productos.js -->
                     </div>
 
-                    <!-- Mensaje de sin resultados -->
+                    <!-- Mensaje cuando NO hay resultados -->
                     <div class="no-results" id="no-results" style="display: none;">
                         <div class="no-results-icon">😞</div>
                         <h2>No se encontraron productos</h2>
@@ -190,10 +217,12 @@
         </div>
     </main>
 
-    <!-- Pie de página -->
+    <!-- ============================================ -->
+    <!-- FOOTER (igual que Home.html) -->
+    <!-- ============================================ -->
     <footer class="footer">
         <div class="footer-content">
-            <!-- Columna Izquierda: Logo y Contacto -->
+            <!-- COLUMNA IZQUIERDA: Logo y contacto -->
             <div class="footer-left">
                 <div class="footer-logo">
                     <img src="img/logo.png" alt="La Esquina Geek" class="footer-logo-img">
@@ -205,7 +234,7 @@
                 </div>
             </div>
 
-            <!-- Columna Centro: Enlaces -->
+            <!-- COLUMNA CENTRO: Enlaces -->
             <div class="footer-center">
                 <h3>ENLACES</h3>
                 <nav class="footer-links">
@@ -216,8 +245,9 @@
                 </nav>
             </div>
 
-            <!-- Columna Derecha: Redes y Newsletter -->
+            <!-- COLUMNA DERECHA: Redes y Newsletter -->
             <div class="footer-right">
+                <!-- Redes sociales -->
                 <div class="footer-social-wrapper">
                     <h3>REDES SOCIALES</h3>
                     <nav class="footer-social">
@@ -235,6 +265,8 @@
                         </a>
                     </nav>
                 </div>
+                
+                <!-- Formulario de newsletter -->
                 <div class="footer-newsletter">
                     <h3>NEWSLETTER</h3>
                     <form class="newsletter-form">
@@ -246,14 +278,16 @@
             </div>
         </div>
 
-        <!-- Copyright -->
+        <!-- Derechos de autor -->
         <div class="footer-bottom">
             <p>© Todos los derechos reservados 2025</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Enlaces a archivos JavaScript -->
+    <!-- Primero carga Home.js (para el menú hamburguesa) -->
+    <script src="Home.js"></script>
+    <!-- Luego carga productos.js (para los filtros y productos) -->
     <script src="productos.js"></script>
 </body>
-
 </html>

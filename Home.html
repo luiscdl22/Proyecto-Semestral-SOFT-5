@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="La Esquina Geek - Tienda online de coleccionables exclusivos y raros.">
+    
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>La Esquina Geek</title>
+    
+    <!-- Icono que aparece en la pestaña -->
     <link rel="icon" href="img/favicon/favicon.ico" sizes="32x32" type="image/png">
+    
+    <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Archivo de estilos CSS -->
+    <link rel="stylesheet" href="Home.css">
 </head>
 
 <body>
-    <!-- Encabezado principal -->
+    <!-- ============================================ -->
+    <!-- ENCABEZADO (Barra superior fija) -->
+    <!-- ============================================ -->
     <header class="header">
         <div class="header-container">
-            <!-- Menú hamburguesa y búsqueda -->
+            
+            <!-- PARTE IZQUIERDA: Menú hamburguesa + Búsqueda -->
             <div class="header-left">
+                <!-- Botón menú hamburguesa (3 rayitas) -->
                 <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menú de navegación">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
+                <!-- Barra de búsqueda -->
                 <form class="search-bar" role="search">
                     <input type="search" placeholder="Buscar..." aria-label="Buscar">
                     <button type="submit" aria-label="Buscar">
@@ -35,12 +46,13 @@
                 </form>
             </div>
 
-            <!-- Logo y marca centrados -->
+            <!-- PARTE CENTRAL: Logo de la tienda -->
             <div class="logo">
-                <img src="img/logo.png" alt="Logo de La Esquina Geek" class="logo-icon" width="40" height="40">
+                <img src="img/logo.png" alt="Logo de La Esquina Geek" class="logo-icon">
                 <h1>La esquina Geek</h1>
             </div>
 
+            <!-- PARTE DERECHA: Botones de acción -->
             <div class="header-actions">
                 <a href="ayuda.html" class="btn-icon-text" aria-label="Ayuda">
                     <span class="text">AYUDA</span>
@@ -58,15 +70,19 @@
             </div>
         </div>
 
-        <!-- Menú lateral desplegable -->
+        <!-- ============================================ -->
+        <!-- MENÚ LATERAL (Se abre con hamburguesa) -->
+        <!-- ============================================ -->
         <nav class="sidebar-menu" id="sidebar-menu" aria-label="Menú de navegación principal">
+            <!-- Cabecera del menú lateral -->
             <div class="sidebar-header">
                 <h2>Menú</h2>
                 <button class="sidebar-close" id="sidebar-close" aria-label="Cerrar menú">✕</button>
             </div>
 
+            <!-- Contenido del menú lateral -->
             <div class="sidebar-content">
-                <!-- Enlaces principales -->
+                <!-- Enlaces principales de navegación -->
                 <div class="sidebar-section">
                     <h3>Navegación</h3>
                     <a href="Home.html" aria-current="page">Inicio</a>
@@ -75,7 +91,7 @@
                     <a href="contacto.html">Contacto</a>
                 </div>
 
-                <!-- Categorías -->
+                <!-- Categorías de productos -->
                 <div class="sidebar-section">
                     <h3>Categorías</h3>
                     <a href="productos.html?cat=pokemon">Pokémon TCG</a>
@@ -88,13 +104,17 @@
             </div>
         </nav>
 
-        <!-- Overlay para el menú -->
+        <!-- Fondo oscuro cuando el menú está abierto -->
         <div class="sidebar-overlay" id="sidebar-overlay"></div>
     </header>
 
-    <!-- Main Content -->
+    <!-- ============================================ -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ============================================ -->
     <main>
-        <!-- Carrusel Hero -->
+        <!-- ============================================ -->
+        <!-- CARRUSEL HERO (NO MODIFICAR) -->
+        <!-- ============================================ -->
         <section class="hero-carousel">
             <div class="carousel-container">
                 <!-- Slide 1 -->
@@ -138,7 +158,7 @@
                 </article>
             </div>
 
-            <!-- Indicadores -->
+            <!-- Puntos indicadores de posición -->
             <div class="carousel-indicators">
                 <button class="indicator active" data-slide="0"></button>
                 <button class="indicator" data-slide="1"></button>
@@ -146,45 +166,52 @@
                 <button class="indicator" data-slide="3"></button>
             </div>
 
-            <!-- Controles -->
-            <button class="carousel-btn prev">❮</button>
-            <button class="carousel-btn next">❯</button>
+            <!-- Flechas de navegación -->
+            <button class="carousel-btn prev">◄</button>
+            <button class="carousel-btn next">►</button>
         </section>
 
-        <!-- Anuncios y Novedades -->
+        <!-- ============================================ -->
+        <!-- ANUNCIOS Y NOVEDADES -->
+        <!-- ============================================ -->
         <section class="announcements-section">
             <h2>Novedades y Anuncios</h2>
             <div class="announcements-grid">
+                
+                <!-- Anuncio 1 -->
                 <article class="announcement-card">
                     <span class="badge">🔥 Nuevo</span>
                     <h3>Nuevas Adquisiciones de Pokémon TCG</h3>
-                    <p>Acabamos de recibir cartas exclusivas de la colección Crown Zenith incluyendo Charizard VMAX y
-                        Mewtwo Shiny. Stock limitado.</p>
+                    <p>Acabamos de recibir cartas exclusivas de la colección Crown Zenith incluyendo Charizard VMAX y Mewtwo Shiny. Stock limitado.</p>
                     <a href="productos.html?cat=pokemon" class="btn-link">Ver colección →</a>
                 </article>
 
+                <!-- Anuncio 2 -->
                 <article class="announcement-card">
                     <span class="badge">⚡ Promo</span>
                     <h3>Descuento en Figuras Hot Toys</h3>
-                    <p>15% de descuento en toda nuestra línea de figuras Hot Toys Marvel. Oferta válida hasta fin de
-                        mes.</p>
+                    <p>15% de descuento en toda nuestra línea de figuras Hot Toys Marvel. Oferta válida hasta fin de mes.</p>
                     <a href="productos.html?cat=figuras" class="btn-link">Ver ofertas →</a>
                 </article>
 
+                <!-- Anuncio 3 -->
                 <article class="announcement-card">
                     <span class="badge">📦 Stock</span>
                     <h3>Restock de Funko Pop Exclusivos</h3>
-                    <p>Ya están disponibles los Funko Pop exclusivos de DC Comics que estaban agotados. Ediciones
-                        limitadas.</p>
+                    <p>Ya están disponibles los Funko Pop exclusivos de DC Comics que estaban agotados. Ediciones limitadas.</p>
                     <a href="productos.html?cat=funko" class="btn-link">Ver disponibles →</a>
                 </article>
             </div>
         </section>
 
-        <!-- Productos Destacados -->
+        <!-- ============================================ -->
+        <!-- PRODUCTOS DESTACADOS -->
+        <!-- ============================================ -->
         <section class="featured-products">
             <h2>Productos Destacados del Mes</h2>
             <div class="products-grid">
+                
+                <!-- Producto 1 -->
                 <article class="product-card">
                     <span class="product-badge">Destacado</span>
                     <div class="product-image">
@@ -197,6 +224,7 @@
                     </div>
                 </article>
 
+                <!-- Producto 2 -->
                 <article class="product-card">
                     <div class="product-image">
                         <img src="img/productos/gundam-astray.jpg" alt="Gundam Astray">
@@ -208,6 +236,7 @@
                     </div>
                 </article>
 
+                <!-- Producto 3 -->
                 <article class="product-card">
                     <div class="product-image">
                         <img src="img/productos/blue-eyes.jpg" alt="Blue-Eyes White Dragon">
@@ -219,6 +248,7 @@
                     </div>
                 </article>
 
+                <!-- Producto 4 -->
                 <article class="product-card">
                     <div class="product-image">
                         <img src="img/productos/iron-man-hot-toys.jpg" alt="Iron Man Hot Toys">
@@ -232,37 +262,49 @@
             </div>
         </section>
 
-        <!-- Información de la tienda -->
+        <!-- ============================================ -->
+        <!-- INFORMACIÓN DE LA TIENDA -->
+        <!-- ============================================ -->
         <section class="info-section">
             <div class="info-grid">
-                <section class="info-card">
+                <!-- Ventaja 1 -->
+                <div class="info-card">
                     <div class="info-icon">🚚</div>
                     <h3>Envío Seguro</h3>
                     <p>Embalaje especial para coleccionables</p>
-                </section>
-                <section class="info-card">
+                </div>
+                
+                <!-- Ventaja 2 -->
+                <div class="info-card">
                     <div class="info-icon">✓</div>
                     <h3>Productos Verificados</h3>
                     <p>Autenticidad garantizada en cada artículo</p>
-                </section>
-                <section class="info-card">
+                </div>
+                
+                <!-- Ventaja 3 -->
+                <div class="info-card">
                     <div class="info-icon">💳</div>
                     <h3>Pago Seguro</h3>
                     <p>Múltiples métodos de pago disponibles</p>
-                </section>
-                <section class="info-card">
+                </div>
+                
+                <!-- Ventaja 4 -->
+                <div class="info-card">
                     <div class="info-icon">📞</div>
                     <h3>Soporte 24/7</h3>
                     <p>Atención al cliente siempre disponible</p>
-                </section>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Pie de página -->
+    <!-- ============================================ -->
+    <!-- PIE DE PÁGINA -->
+    <!-- ============================================ -->
     <footer class="footer">
         <div class="footer-content">
-            <!-- Columna Izquierda: Logo y Contacto -->
+            
+            <!-- COLUMNA IZQUIERDA: Logo y contacto -->
             <div class="footer-left">
                 <div class="footer-logo">
                     <img src="img/logo.png" alt="La Esquina Geek" class="footer-logo-img">
@@ -274,7 +316,7 @@
                 </div>
             </div>
 
-            <!-- Columna Centro: Enlaces -->
+            <!-- COLUMNA CENTRO: Enlaces -->
             <div class="footer-center">
                 <h3>ENLACES</h3>
                 <nav class="footer-links">
@@ -285,8 +327,9 @@
                 </nav>
             </div>
 
-            <!-- Columna Derecha: Redes y Newsletter -->
+            <!-- COLUMNA DERECHA: Redes y Newsletter -->
             <div class="footer-right">
+                <!-- Redes sociales -->
                 <div class="footer-social-wrapper">
                     <h3>REDES SOCIALES</h3>
                     <nav class="footer-social">
@@ -304,6 +347,8 @@
                         </a>
                     </nav>
                 </div>
+                
+                <!-- Formulario de newsletter -->
                 <div class="footer-newsletter">
                     <h3>NEWSLETTER</h3>
                     <form class="newsletter-form">
@@ -315,13 +360,13 @@
             </div>
         </div>
 
-        <!-- Copyright -->
+        <!-- Derechos de autor -->
         <div class="footer-bottom">
             <p>© Todos los derechos reservados 2025</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="Home.js"></script>
 </body>
-
 </html>
