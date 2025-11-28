@@ -24,67 +24,51 @@
         <span>Volver al inicio</span>
     </a>
 
-    <div class="auth-container" id="auth-container">
-        <!-- Panel de Login -->
-        <div class="form-container login-container">
-            <form class="auth-form" id="login-form">
+    <div class="auth-container-simple">
+        <div class="auth-toggle-btns">
+            <button id="show-login" class="toggle-btn active">Iniciar Sesión</button>
+            <button id="show-register" class="toggle-btn">Registrarse</button>
+        </div>
+        <div class="auth-forms-toggle">
+            <form class="auth-form-simple" id="login-form">
                 <h1>Iniciar Sesión</h1>
-                <div class="social-container">
-                    <a href="#" class="social-btn" aria-label="Google">G</a>
-                    <a href="#" class="social-btn" aria-label="Facebook">F</a>
-                    <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
-                </div>
-                <span class="form-subtitle">o usa tu cuenta</span>
-
-                <!-- CAMPOS ACTUALIZADOS -->
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
-
                 <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 <button type="submit" class="btn-submit">Iniciar Sesión</button>
             </form>
-        </div>
-
-        <!-- Panel de Registro -->
-        <div class="form-container register-container">
-            <form class="auth-form" id="register-form">
+            <form class="auth-form-simple" id="register-form" style="display:none;">
                 <h1>Crear Cuenta</h1>
-                <div class="social-container">
-                    <a href="#" class="social-btn" aria-label="Google">G</a>
-                    <a href="#" class="social-btn" aria-label="Facebook">F</a>
-                    <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
-                </div>
-                <span class="form-subtitle">o usa tu email</span>
-
-                <!-- CAMPOS ACTUALIZADOS -->
                 <input type="text" name="name" placeholder="Nombre" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
                 <button type="submit" class="btn-submit">Registrarse</button>
             </form>
         </div>
-
-        <!-- Panel de Overlay (Naranja deslizante) -->
-        <div class="overlay-container">
-            <div class="overlay">
-                <!-- Overlay izquierdo (cuando está en login) -->
-                <div class="overlay-panel overlay-left">
-                    <h1>¡Bienvenido de Vuelta!</h1>
-                    <p>Para mantenerte conectado con nosotros, inicia sesión con tu información personal</p>
-                    <button class="btn-ghost" id="login-btn">Iniciar Sesión</button>
-                </div>
-
-                <!-- Overlay derecho (cuando está en register) -->
-                <div class="overlay-panel overlay-right">
-                    <h1>¡Hola, Geek!</h1>
-                    <p>Regístrate y únete a nuestra comunidad de coleccionistas y entusiastas</p>
-                    <button class="btn-ghost" id="register-btn">Registrarse</button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="auth.js"></script>
+    <script>
+        // Alternar entre login y registro
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginForm = document.getElementById("login-form");
+            const registerForm = document.getElementById("register-form");
+            const showLogin = document.getElementById("show-login");
+            const showRegister = document.getElementById("show-register");
+            showLogin.addEventListener("click", function () {
+                loginForm.style.display = "flex";
+                registerForm.style.display = "none";
+                showLogin.classList.add("active");
+                showRegister.classList.remove("active");
+            });
+            showRegister.addEventListener("click", function () {
+                loginForm.style.display = "none";
+                registerForm.style.display = "flex";
+                showRegister.classList.add("active");
+                showLogin.classList.remove("active");
+            });
+        });
+    </script>
 </body>
 
 </html>

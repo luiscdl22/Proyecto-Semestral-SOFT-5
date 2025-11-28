@@ -1,423 +1,68 @@
-/* ========================================
-   ESTILOS DE PRODUCTOS - productos.css
-   ======================================== */
-
-/* ========================================
-   CONTENEDOR PRINCIPAL
-   ======================================== */
-/* El contenedor principal de la página de productos */
-.products-main {
-  min-height: calc(100vh - 200px);  /* Alto mínimo (pantalla completa menos footer) */
-  padding: 8rem 0 2rem 0;  /* Espacio arriba (para el header fijo) y abajo */
-}
-
-/* Contenedor que limita el ancho del contenido */
-.products-container {
-  max-width: 87.5rem;  /* Ancho máximo (1400px) */
-  margin: 0 auto;      /* Centra horizontalmente */
-  padding: 0 1rem;     /* Espacio a los lados */
-}
-
-/* Layout principal: sidebar + productos */
-.products-layout {
-  display: grid;                /* Usa sistema de cuadrícula */
-  grid-template-columns: 1fr;   /* En móvil: una sola columna */
-  gap: 2rem;                    /* Espacio entre sidebar y productos */
-}
-
-/* En pantallas grandes (960px o más) */
-@media (min-width: 60rem) {
-  .products-layout {
-    grid-template-columns: 18rem 1fr;  /* Sidebar (18rem) + Productos (resto del espacio) */
-  }
-}
-
-/* ========================================
-   SIDEBAR DE FILTROS (Barra lateral)
-   ======================================== */
-/* Contenedor de todos los filtros */
-.filters-sidebar {
-  background: var(--color-card);     /* Fondo azul */
-  border: 2px solid var(--color-secondary);  /* Borde azul */
-  border-radius: var(--border-radius-lg);    /* Bordes redondeados */
-  padding: 1.5rem;                   /* Espacio interno */
-  height: fit-content;               /* Alto ajustado al contenido */
-}
-
-/* En pantallas grandes, el sidebar se queda fijo al hacer scroll */
-@media (min-width: 60rem) {
-  .filters-sidebar {
-    position: sticky;  /* Se queda pegado mientras haces scroll */
-    top: 6rem;         /* A 6rem del borde superior (debajo del header) */
-  }
-}
-
-/* Cabecera del sidebar (título "Filtros" + botón "Limpiar") */
-.filters-header {
-  display: flex;                   /* Los elementos van en fila */
-  justify-content: space-between;  /* Separados lo más posible */
-  align-items: center;             /* Centrados verticalmente */
-  padding-bottom: 1rem;            /* Espacio abajo */
-  border-bottom: 2px solid var(--color-secondary);  /* Línea azul abajo */
-  margin-bottom: 1.5rem;           /* Espacio después de la línea */
-}
-
-/* Título "Filtros" */
-.filters-header h2 {
-  font-family: var(--font-title);  /* Fuente Rajdhani */
-  font-size: 1.5rem;               /* Grande */
-  color: var(--color-primary);     /* Naranja */
-  font-weight: 700;                /* Negrita */
-  margin: 0;                       /* Sin margen */
-}
-
-/* Botón "Limpiar" */
-.btn-clear-filters {
-  background: transparent;         /* Sin fondo */
-  border: 1px solid var(--color-secondary);  /* Borde azul */
-  color: var(--color-muted);       /* Texto gris */
-  padding: 0.4rem 0.75rem;         /* Espacio interno */
-  border-radius: var(--border-radius);  /* Bordes redondeados */
-  font-size: 0.85rem;              /* Pequeño */
-  cursor: pointer;                 /* Cambia a manita */
-  transition: var(--transition);   /* Animación suave */
-}
-
-/* Cuando pasas el mouse por el botón "Limpiar" */
-.btn-clear-filters:hover {
-  border-color: var(--color-primary);  /* Borde naranja */
-  color: var(--color-primary);         /* Texto naranja */
-}
-
-/* ========================================
-   SECCIONES DE FILTROS
-   ======================================== */
-/* Cada sección de filtro (Categorías, Precio, Ordenar) */
-.filter-section {
-  margin-bottom: 2rem;  /* Espacio abajo entre secciones */
-}
-
-/* Título de cada sección (ej: "Categorías", "Rango de Precio") */
-.filter-section h3 {
-  font-family: var(--font-title);  /* Fuente Rajdhani */
-  font-size: 1.1rem;               /* Mediano */
-  color: var(--color-text);        /* Blanco */
-  font-weight: 600;                /* Semi-negrita */
-  margin-bottom: 1rem;             /* Espacio abajo */
-  text-transform: uppercase;       /* MAYÚSCULAS */
-  letter-spacing: 0.05em;          /* Espacio entre letras */
-}
-
-/* Contenedor de las opciones de filtro */
-.filter-options {
-  display: flex;              /* Los elementos van en columna */
-  flex-direction: column;     /* De arriba hacia abajo */
-  gap: 0.75rem;               /* Espacio entre opciones */
-}
-
-/* ========================================
-   CHECKBOXES PERSONALIZADOS
-   ======================================== */
-/* Cada opción con checkbox (ej: Cartas Coleccionables) */
-.filter-checkbox {
-  display: flex;              /* Checkbox + texto en fila */
-  align-items: center;        /* Centrados verticalmente */
-  gap: 0.75rem;               /* Espacio entre checkbox y texto */
-  cursor: pointer;            /* Cambia a manita */
-  color: var(--color-muted);  /* Texto gris */
-  font-size: 0.9rem;          /* Mediano */
-  transition: var(--transition);  /* Animación suave */
-}
-
-/* Cuando pasas el mouse por una opción */
-.filter-checkbox:hover {
-  color: var(--color-text);  /* Texto blanco */
-}
-
-/* El checkbox en sí */
-.filter-checkbox input[type="checkbox"] {
-  width: 1.25rem;   /* Ancho */
-  height: 1.25rem;  /* Alto */
-  cursor: pointer;  /* Cambia a manita */
-  accent-color: var(--color-primary);  /* Color naranja cuando está marcado */
-}
-
-/* ========================================
-   RADIO BUTTONS PERSONALIZADOS
-   ======================================== */
-/* Cada opción con radio button (ej: Precio: Menor a Mayor) */
-.filter-radio {
-  display: flex;              /* Radio + texto en fila */
-  align-items: center;        /* Centrados verticalmente */
-  gap: 0.75rem;               /* Espacio entre radio y texto */
-  cursor: pointer;            /* Cambia a manita */
-  color: var(--color-muted);  /* Texto gris */
-  font-size: 0.9rem;          /* Mediano */
-  transition: var(--transition);  /* Animación suave */
-}
-
-/* Cuando pasas el mouse por una opción */
-.filter-radio:hover {
-  color: var(--color-text);  /* Texto blanco */
-}
-
-/* El radio button en sí */
-.filter-radio input[type="radio"] {
-  width: 1.25rem;   /* Ancho */
-  height: 1.25rem;  /* Alto */
-  cursor: pointer;  /* Cambia a manita */
-  accent-color: var(--color-primary);  /* Color naranja cuando está seleccionado */
-}
-
-/* ========================================
-   RANGO DE PRECIO (Sliders)
-   ======================================== */
-/* Contenedor de los sliders de precio */
-.price-range {
-  display: flex;           /* Elementos en columna */
-  flex-direction: column;  /* De arriba hacia abajo */
-  gap: 1rem;               /* Espacio entre elementos */
-}
-
-/* Los sliders de rango */
-.price-range input[type="range"] {
-  width: 100%;             /* Ocupa todo el ancho */
-  height: 0.25rem;         /* Altura de la barra */
-  background: var(--color-secondary);  /* Color de la barra */
-  border-radius: 0.125rem;  /* Bordes redondeados */
-  outline: none;           /* Sin borde al hacer click */
-  cursor: pointer;         /* Cambia a manita */
-  accent-color: var(--color-primary);  /* Color naranja del slider */
-}
-
-/* Contenedor de los valores de precio ($0 - $500) */
-.price-values {
-  display: flex;                  /* Los valores van en fila */
-  justify-content: space-between;  /* Separados lo más posible */
-  color: var(--color-muted);      /* Texto gris */
-  font-size: 0.9rem;              /* Mediano */
-  font-weight: 600;               /* Semi-negrita */
-}
-
-/* ========================================
-   GRID DE PRODUCTOS (Área principal)
-   ======================================== */
-/* Contenedor del área de productos */
-.products-content {
-  display: flex;              /* Elementos en columna */
-  flex-direction: column;     /* De arriba hacia abajo */
-  gap: 2rem;                  /* Espacio entre elementos */
-}
-
-/* Cabecera de productos (título + contador) */
-.products-header {
-  display: flex;              /* Elementos en fila */
-  justify-content: space-between;  /* Separados lo más posible */
-  align-items: center;        /* Centrados verticalmente */
-  flex-wrap: wrap;            /* Se ajusta en pantallas pequeñas */
-  gap: 1rem;                  /* Espacio entre elementos */
-}
-
-/* Título "Productos — La Esquina Geek" */
-.products-header h1 {
-  font-family: var(--font-title);  /* Fuente Rajdhani */
-  font-size: 2.5rem;               /* Muy grande */
-  color: var(--color-primary);     /* Naranja */
-  font-weight: 700;                /* Negrita */
-  text-transform: uppercase;       /* MAYÚSCULAS */
-  letter-spacing: 0.05em;          /* Espacio entre letras */
-  margin: 0;                       /* Sin margen */
-}
-
-/* Contador de productos ("10 productos encontrados") */
-.products-count {
-  color: var(--color-muted);  /* Gris */
-  font-size: 0.95rem;         /* Mediano */
-}
-
-/* Grid donde se muestran las tarjetas de productos */
+/* productos.css limpio: solo grid de productos y tarjetas básicas */
 .products-grid {
-  display: grid;  /* Sistema de cuadrícula */
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));  /* Columnas automáticas de mínimo 16rem */
-  gap: 1.5rem;    /* Espacio entre tarjetas */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: stretch;
 }
-
-/* ========================================
-   TARJETAS DE PRODUCTOS
-   ======================================== */
-/* Cada tarjeta de producto */
 .product-card {
-  position: relative;  /* Para posicionar elementos dentro */
-  background: var(--color-card);     /* Fondo azul */
-  border: 2px solid var(--color-secondary);  /* Borde azul */
-  border-radius: var(--border-radius-lg);    /* Bordes redondeados */
-  overflow: hidden;    /* Esconde lo que salga */
-  display: flex;       /* Elementos en columna */
-  flex-direction: column;  /* De arriba hacia abajo */
-  transition: var(--transition);  /* Animación suave */
-  cursor: pointer;     /* Cambia a manita */
+  background: #1a2942;
+  border: 2px solid #1e3a5f;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
-
-/* Cuando pasas el mouse por una tarjeta */
-.product-card:hover {
-  border-color: var(--color-primary);  /* Borde naranja */
-  transform: translateY(-5px);         /* Se eleva 5px */
-  box-shadow: var(--shadow-hover);     /* Sombra naranja */
+.product-card img {
+  width: 100%;
+  max-width: 180px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1.2rem;
+  display: block;
 }
-
-/* Imagen del producto */
-.product-image {
-  width: 100%;         /* Ocupa todo el ancho */
-  aspect-ratio: 1;     /* Cuadrada (1:1) */
-  object-fit: cover;   /* Recorta la imagen para llenar el espacio */
-  background: var(--color-dark-blue);  /* Fondo mientras carga la imagen */
+.product-card h3 {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  width: 100%;
 }
-
-/* Información del producto (categoría, nombre, precio, botón) */
-.product-info {
-  padding: 1.25rem;         /* Espacio interno */
-  display: flex;            /* Elementos en columna */
-  flex-direction: column;   /* De arriba hacia abajo */
-  flex-grow: 1;             /* Ocupa el espacio disponible */
-  gap: 0.75rem;             /* Espacio entre elementos */
-}
-
-/* Categoría del producto (ej: "Cartas Coleccionables") */
-.product-category {
-  font-size: 0.75rem;          /* Pequeño */
-  color: var(--color-muted);   /* Gris */
-  text-transform: uppercase;   /* MAYÚSCULAS */
-  letter-spacing: 0.1em;       /* Espacio entre letras */
-  font-weight: 600;            /* Semi-negrita */
-}
-
-/* Nombre del producto */
-.product-name {
-  font-family: var(--font-title);  /* Fuente Rajdhani */
-  font-size: 1.5rem;               /* Grande */
-  color: var(--color-text);        /* Blanco */
-  font-weight: 700;                /* Negrita */
-  margin: 0;                       /* Sin margen */
-  flex-grow: 1;                    /* Ocupa el espacio disponible */
-}
-
-/* Precio del producto */
 .product-price {
-  font-family: var(--font-title);  /* Fuente Rajdhani */
-  font-size: 2rem;                 /* Muy grande */
-  color: var(--color-primary);     /* Naranja */
-  font-weight: 700;                /* Negrita */
-  margin: 0;                       /* Sin margen */
+  color: #ff6b35;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0 1.5rem 0;
+  width: 100%;
 }
-
-/* Botón "Agregar al Carrito" */
-.btn-add-to-cart {
-  width: 100%;         /* Ocupa todo el ancho */
-  background: var(--color-primary);  /* Fondo naranja */
-  color: var(--color-text);          /* Texto blanco */
-  border: none;        /* Sin borde */
-  padding: 0.875rem;   /* Espacio interno */
-  border-radius: var(--border-radius);  /* Bordes redondeados */
-  font-size: 0.95rem;  /* Mediano */
-  font-weight: 700;    /* Negrita */
-  cursor: pointer;     /* Cambia a manita */
-  transition: var(--transition);  /* Animación suave */
-  text-transform: uppercase;  /* MAYÚSCULAS */
-  letter-spacing: 0.05em;     /* Espacio entre letras */
-}
-
-/* Cuando pasas el mouse por el botón */
-.btn-add-to-cart:hover {
-  background: var(--color-accent);  /* Naranja más claro */
-  transform: translateY(-2px);      /* Se eleva un poco */
-}
-
-/* ========================================
-   SIN RESULTADOS (cuando no hay productos)
-   ======================================== */
-/* Contenedor del mensaje "No se encontraron productos" */
-.no-results {
-  display: flex;              /* Elementos en columna */
-  flex-direction: column;     /* De arriba hacia abajo */
-  align-items: center;        /* Centrado horizontalmente */
-  justify-content: center;    /* Centrado verticalmente */
-  text-align: center;         /* Texto centrado */
-  padding: 4rem 2rem;         /* Espacio interno */
-  gap: 1.5rem;                /* Espacio entre elementos */
-}
-
-/* Emoji grande de "cara triste" */
-.no-results-icon {
-  font-size: 5rem;  /* Muy grande */
-  opacity: 0.3;     /* Semi-transparente */
-}
-
-/* Título del mensaje */
-.no-results h2 {
-  font-family: var(--font-title);  /* Fuente Rajdhani */
-  font-size: 2rem;                 /* Grande */
-  color: var(--color-text);        /* Blanco */
-  margin: 0;                       /* Sin margen */
-}
-
-/* Texto descriptivo del mensaje */
-.no-results p {
-  color: var(--color-muted);  /* Gris */
-  max-width: 30rem;           /* Ancho máximo */
-  line-height: 1.6;           /* Espacio entre líneas */
-}
-
-/* Botón "Reiniciar Filtros" */
 .btn-primary {
-  background: var(--color-primary);  /* Fondo naranja */
-  color: var(--color-text);          /* Texto blanco */
-  padding: 1rem 2rem;                /* Espacio interno */
-  border: none;                      /* Sin borde */
-  border-radius: var(--border-radius);  /* Bordes redondeados */
-  font-weight: 700;                  /* Negrita */
-  text-transform: uppercase;         /* MAYÚSCULAS */
-  letter-spacing: 0.05em;            /* Espacio entre letras */
-  cursor: pointer;                   /* Cambia a manita */
-  transition: var(--transition);     /* Animación suave */
+  background: #ff6b35;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: auto;
+  width: 80%;
+  max-width: 180px;
+  align-self: center;
 }
-
-/* Cuando pasas el mouse por el botón */
-.btn-primary:hover {
-  background: var(--color-accent);  /* Naranja más claro */
-  transform: translateY(-2px);      /* Se eleva un poco */
-  box-shadow: var(--shadow-hover);  /* Sombra naranja */
+.product-card:hover {
+  border-color: #ff6b35;
+  background: #22304a;
 }
-
-/* ========================================
-   DISEÑO RESPONSIVE (Para móviles)
-   ======================================== */
-/* En pantallas menores a 960px */
-@media (max-width: 60rem) {
-  /* El título es más pequeño */
-  .products-header h1 {
-    font-size: 2rem;  /* Más pequeño */
-  }
-
-  /* El sidebar ya no se queda fijo */
-  .filters-sidebar {
-    position: static;  /* Comportamiento normal (no sticky) */
-  }
-}
-
-/* En pantallas menores a 768px */
-@media (max-width: 48rem) {
-  /* El grid de productos usa columnas más pequeñas */
+@media (max-width: 900px) {
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));  /* Mínimo 14rem */
+    grid-template-columns: 1fr 1fr;
   }
-
-  /* El nombre del producto es más pequeño */
-  .product-name {
-    font-size: 1.25rem;  /* Más pequeño */
-  }
-
-  /* El precio es más pequeño */
-  .product-price {
-    font-size: 1.5rem;  /* Más pequeño */
+}
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
   }
 }
