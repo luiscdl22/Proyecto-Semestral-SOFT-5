@@ -62,6 +62,18 @@ document.addEventListener("DOMContentLoaded", function () {
       price: 149.0,
       image: "img/productos/marvel-legends.jpg",
     },
+    {
+      id: 11,
+      name: "Gamecube Console Platinum",
+      price: 267.0,
+      image: "img/productos/gamecube.jpg",
+    },
+    {
+      id: 12,
+      name: "Nintendo 64",
+      price: 129.95,
+      image: "img/productos/nintendo64.jpg",
+    },
   ];
   const productsGrid = document.getElementById("products-grid");
   if (!productsGrid) return;
