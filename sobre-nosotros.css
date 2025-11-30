@@ -1,4 +1,4 @@
-/* sobre-nosotros.css limpio: grid de productos y tarjetas básicas*/
+/* sobre-nosotros.css limpio: grid de miembros y tarjetas básicas*/
 .miembros-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
