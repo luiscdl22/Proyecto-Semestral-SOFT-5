@@ -1,39 +1,44 @@
-(function () {
-  "use strict";
+// auth.js - Versión simplificada y corregida
 
-  const container = document.getElementById("auth-container");
-  const registerBtn = document.getElementById("register-btn");
-  const loginBtn = document.getElementById("login-btn");
-  const loginForm = document.getElementById("login-form");
-  const registerForm = document.getElementById("register-form");
-
-  function showRegister() {
-    container?.classList.add("active");
-  }
-
-  function showLogin() {
-    container?.classList.remove("active");
-  }
-
-  // Funciones de login y registro deshabilitadas (sin conexión a API)
-  function handleLogin(e) {
-    e.preventDefault();
-    alert("Funcionalidad de login deshabilitada. Implementar en C#");
-  }
-
-  function handleRegister(e) {
-    e.preventDefault();
-    alert("Funcionalidad de registro deshabilitada. Implementar en C#");
-  }
-
-  function init() {
-    registerBtn?.addEventListener("click", showRegister);
-    loginBtn?.addEventListener("click", showLogin);
-    loginForm?.addEventListener("submit", handleLogin);
-    registerForm?.addEventListener("submit", handleRegister);
-  }
-
-  document.readyState === "loading"
-    ? document.addEventListener("DOMContentLoaded", init)
-    : init();
-})();
+document.addEventListener("DOMContentLoaded", function () {
+    // Elementos del DOM
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+    const showLogin = document.getElementById("show-login");
+    const showRegister = document.getElementById("show-register");
+    
+    // Mostrar formulario de login
+    if (showLogin) {
+        showLogin.addEventListener("click", function () {
+            loginForm.style.display = "flex";
+            registerForm.style.display = "none";
+            showLogin.classList.add("active");
+            showRegister.classList.remove("active");
+        });
+    }
+    
+    // Mostrar formulario de registro
+    if (showRegister) {
+        showRegister.addEventListener("click", function () {
+            loginForm.style.display = "none";
+            registerForm.style.display = "flex";
+            showRegister.classList.add("active");
+            showLogin.classList.remove("active");
+        });
+    }
+    
+    // Manejar envío de formularios
+    if (loginForm) {
+        loginForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Inicio de sesión exitoso (simulado). En una implementación real, esto conectaría con el backend en C#.");
+        });
+    }
+    
+    if (registerForm) {
+        registerForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Registro exitoso (simulado). En una implementación real, esto conectaría con el backend en C#.");
+        });
+    }
+});

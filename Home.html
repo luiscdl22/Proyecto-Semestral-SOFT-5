@@ -28,22 +28,23 @@
                 <h1 style="display:inline;vertical-align:middle;">La Esquina Geek</h1>
             </div>
             <div class="header-actions">
-                <button class="cart-btn">
+                <button class="cart-btn" id="btn-cart">
                     <img src="img/iconos/carrito.png" alt="Carrito" class="icon-btn"
                         style="width: 22px; height: 22px; vertical-align: middle; margin-right: 6px;">
-                    Carrito
+                    Carrito (<span id="cart-count">0</span>)
                 </button>
                 <button class="login-btn" id="btn-login">
                     <img src="img/iconos/usuario.png" alt="Login" class="icon-btn"
                         style="width: 22px; height: 22px; vertical-align: middle; margin-right: 6px;">
-                    Login
+                    <span id="user-name">Login</span>
                 </button>
             </div>
         </div>
         <nav class="main-nav">
             <a href="Home.html">Inicio</a>
             <a href="productos.html">Productos</a>
-            <a href="#sobre">Sobre Nosotros</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="historial.html">Mis Compras</a>
         </nav>
     </header>
 
