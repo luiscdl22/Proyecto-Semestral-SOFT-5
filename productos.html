@@ -27,13 +27,30 @@
 
 <body>
     <!-- ============================================ -->
-    <!-- HEADER (igual que Home.html) -->
+    <!-- HEADER ACTUALIZADO (igual que carrito.html) -->
     <!-- ============================================ -->
     <header class="header">
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo La Esquina Geek" class="logo-img"
-                style="width:38px;height:38px;vertical-align:middle;margin-right:10px;">
-            <h1 style="display:inline;vertical-align:middle;">La Esquina Geek</h1>
+        <div class="header-top">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar productos..." class="search-input">
+                <button class="search-btn" id="btn-search">
+                    <img src="img/iconos/buscar.png" alt="Buscar" class="icon-btn" style="width: 20px; height: 20px;">
+                </button>
+            </div>
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo La Esquina Geek" class="logo-img" style="width:38px;height:38px;vertical-align:middle;margin-right:10px;">
+                <h1 style="display:inline;vertical-align:middle;">La Esquina Geek</h1>
+            </div>
+            <div class="header-actions">
+                <button class="cart-btn" id="btn-cart">
+                    <img src="img/iconos/carrito.png" alt="Carrito" class="icon-btn" style="width: 22px; height: 22px;">
+                    Carrito (<span id="cart-count">0</span>)
+                </button>
+                <button class="login-btn" id="btn-login">
+                    <img src="img/iconos/usuario.png" alt="Login" class="icon-btn" style="width: 22px; height: 22px;">
+                    <span id="user-name">Login</span>
+                </button>
+            </div>
         </div>
         <nav class="main-nav">
             <a href="Home.html">Inicio</a>
@@ -48,18 +65,32 @@
     <main>
         <h2 style="font-family: 'Rajdhani', sans-serif; font-size: 2rem; margin-bottom: 1rem; margin-top:2rem;">Todos
             los Productos</h2>
+        
+        <!-- MINI CARRITO FLOTANTE -->
+        <div class="mini-cart" id="mini-cart">
+            <div class="mini-cart-header">
+                <h4>🛒 Tu Carrito</h4>
+                <span class="mini-cart-count" id="mini-cart-count">0 items</span>
+            </div>
+            <div class="mini-cart-items" id="mini-cart-items">
+                <!-- Items del carrito se mostrarán aquí -->
+            </div>
+            <div class="mini-cart-total">
+                Total: <span id="mini-cart-total">$0.00</span>
+            </div>
+            <div class="mini-cart-actions">
+                <button class="btn-view-cart" onclick="window.location.href='carrito.html'">Ver Carrito Completo</button>
+                <button class="btn-checkout-mini" id="btn-checkout-mini">Pagar Ahora</button>
+            </div>
+        </div>
+
         <div class="products-grid" id="products-grid">
             <!-- Las tarjetas de productos se llenan con productos.js -->
         </div>
-        <!--
-            NOTA PARA DESARROLLADORES:
-            El grid de productos se llena dinámicamente desde productos.js.
-            Puedes agregar filtros, paginación o más lógica aquí si lo deseas.
-        -->
     </main>
 
     <!-- ============================================ -->
-    <!-- FOOTER (igual que Home.html) -->
+    <!-- FOOTER ACTUALIZADO -->
     <!-- ============================================ -->
     <footer class="footer">
         <div class="footer-content">
@@ -103,7 +134,6 @@
     </footer>
 
     <!-- Enlaces a archivos JavaScript -->
-    <!-- Primero carga Home.js (para el menú hamburguesa) -->
     <script src="productos.js"></script>
 </body>
 
